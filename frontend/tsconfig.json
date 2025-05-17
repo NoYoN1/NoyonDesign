@@ -6,6 +6,7 @@
         "*"
       ]
     },
+    "types": ["@radix-ui/react-slot"],
     "target": "ES2017",
     "lib": [
       "dom",
