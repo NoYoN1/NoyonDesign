@@ -1,7 +1,7 @@
-// next.config.mjs
+// next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Бусад тохиргоонууд
 };
 
-export default nextConfig;
+module.exports = nextConfig;
