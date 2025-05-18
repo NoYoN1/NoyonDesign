@@ -6,6 +6,7 @@
         "*"
       ]
     },
+    
     "isolatedModules": false,
     "types": ["@radix-ui/react-slot"],
     "target": "ES2017",
@@ -23,7 +24,7 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "next"

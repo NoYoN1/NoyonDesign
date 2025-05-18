@@ -69,7 +69,7 @@ export default function Home() {
     <Layout>
       <div className="bg-gradient-to-br from-gray-900 via-blue-900/80 to-purple-900/80 text-white">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-16 md:py-24">
+        <section className="relative overflow-hidden min-h-[90vh] flex items-center">
           <div className="absolute inset-0 bg-black/40 z-0" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/90 z-0" />
           
@@ -80,7 +80,12 @@ export default function Home() {
               variants={containerVariants}
               className="text-center max-w-5xl mx-auto"
             >
-              
+              <motion.div variants={itemVariants} className="mb-6">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium text-white/90">
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Шинэлэг санаанууд
+                </span>
+              </motion.div>
 
               <motion.h1
                 variants={titleVariants}
@@ -102,57 +107,55 @@ export default function Home() {
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+                className="flex flex-col sm:flex-row gap-4 justify-center"
               >
-                {/* Primary Service Button */}
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <Button
-                    
+                    asChild
                     variant="default"
                     size="lg"
                     className={cn(
-                      "bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white font-semibold",
-                      "px-8 py-4 rounded-full shadow-2xl hover:shadow-xl",
-                      "hover:from-purple-600 hover:via-blue-600 hover:to-indigo-700 transition-all duration-300",
-                      "flex items-center gap-3 text-lg relative overflow-hidden",
-                      "before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
-                      "after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:to-black/20 after:opacity-0 hover:after:opacity-50 after:transition-opacity after:duration-300",
-                      "group"
+                      "bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold",
+                      "px-8 py-5 rounded-full shadow-xl hover:shadow-2xl",
+                      "hover:from-purple-600 hover:to-blue-700 transition-all duration-300",
+                      "flex items-center gap-2 group text-lg relative overflow-hidden",
+                      "before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500"
                     )}
                   >
-                    <a href="/services" className="relative z-10 flex items-center">
-                      Үйлчилгээг үзэх
-                      <ChevronRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    <a href="/services">
+                      <span className="relative z-10 flex items-center">
+                        Үйлчилгээг үзэх
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" />
+                      </span>
                     </a>
                   </Button>
                 </motion.div>
 
-                {/* Secondary Contact Button */}
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <Button
-
+                    asChild
                     variant="outline"
                     size="lg"
                     className={cn(
-                      "backdrop-blur-md bg-white/5 border border-white/20 text-white font-medium",
-                      "px-8 py-4 rounded-full hover:bg-white/15 hover:border-white/40",
+                      "backdrop-blur-md bg-white/5 border border-white/30 text-white font-medium",
+                      "px-8 py-5 rounded-full hover:bg-white/10 hover:border-white/50",
                       "transition-all duration-300 hover:shadow-lg",
-                      "flex items-center gap-3 text-lg relative group",
-                      "before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:opacity-0 hover:before:opacity-50 before:transition-opacity before:duration-300",
-                      "after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:to-black/10 after:opacity-0 hover:after:opacity-30 after:transition-opacity after:duration-300"
+                      "flex items-center gap-2 group text-lg relative"
                     )}
                   >
-                    <a href="/contact" className="relative z-10 flex items-center">
-                      Холбогдох
-                      <Rocket className="w-6 h-6 ml-2 group-hover:animate-bounce" />
+                    <a href="/contact">
+                      <span className="relative z-10 flex items-center">
+                        Холбогдох
+                        <Rocket className="w-5 h-5 ml-2 group-hover:animate-bounce transition-transform" />
+                      </span>
                     </a>
                   </Button>
                 </motion.div>

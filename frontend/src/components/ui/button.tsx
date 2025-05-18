@@ -1,13 +1,18 @@
-// components/ui/button.tsx
-"use client"; // Client Component болгох
+"use client";
 
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
-import { forwardRef } from "react";
 
-export const Button = forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(
-  ({ className, ...props }, ref) => {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
     return (
-      <button
+      <Comp
         className={cn(
           "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors",
           className
@@ -18,4 +23,7 @@ export const Button = forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<H
     );
   }
 );
+
 Button.displayName = "Button";
+
+export { Button };
