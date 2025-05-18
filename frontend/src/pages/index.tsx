@@ -111,9 +111,6 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <Button
-                    
-                    variant="default"
-                    size="lg"
                     className={cn(
                       "bg-gradient-to-r from-purple-500 via-blue-500 to-indigo-600 text-white font-semibold",
                       "px-8 py-4 rounded-full shadow-2xl hover:shadow-xl",
@@ -138,9 +135,6 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <Button
-                   
-                    variant="outline"
-                    size="lg"
                     className={cn(
                       "backdrop-blur-md bg-white/5 border border-white/20 text-white font-medium",
                       "px-8 py-4 rounded-full hover:bg-white/15 hover:border-white/40",
