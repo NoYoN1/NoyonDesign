@@ -111,7 +111,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <Button
-                    asChild
+                    
                     variant="default"
                     size="lg"
                     className={cn(
@@ -138,7 +138,7 @@ export default function Home() {
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <Button
-                    asChild
+
                     variant="outline"
                     size="lg"
                     className={cn(
