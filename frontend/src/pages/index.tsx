@@ -69,7 +69,9 @@ export default function Home() {
     <Layout>
       <div className="bg-gradient-to-br from-gray-900 via-blue-900/80 to-purple-900/80 text-white">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-16 md:py-24">
+        <section className="relative overflow-hidden py-6 md:py-12">
+
+
           <div className="absolute inset-0 bg-black/40 z-0" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/90 z-0" />
           
