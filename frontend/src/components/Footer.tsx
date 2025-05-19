@@ -106,9 +106,6 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             © {currentYear} PrintSign. Бүх эрх хуулиар хамгаалагдсан.
           </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Сайтыг Next.js, Tailwind CSS технологиор бүтээв.
-          </p>
         </div>
       </div>
     </footer>

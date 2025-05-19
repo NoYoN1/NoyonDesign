@@ -87,10 +87,13 @@ export default function Home() {
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
-                  Брэндээ гэрэлтүүлэх
+                  Өнгө дизайн
                 </span>
                 <br />
-                <span className="text-white">мэргэжлийн шийдэл</span>
+                <span className="text-white">өөдрөг амьралыг тань </span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400">
+                гэрэлтүүлэг
+                </span>
               </motion.h1>
 
               <motion.p
@@ -227,7 +230,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     className="text-2xl sm:text-3xl font-bold text-white mb-3"
                   >
-                    Өнгө дизайн өөдрөг амьдралыг тань гэрэлтүүлэг
+                    Брэндээ гэрэлтүүлэх мэргэжлийн шийдэл
                   </motion.h3>
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
