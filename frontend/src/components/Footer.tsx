@@ -5,15 +5,15 @@ import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react"
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, url: "#", name: "Facebook" },
+    { icon: <Facebook className="w-5 h-5" />, url: "https://www.facebook.com/noyonungu", name: "Facebook" },
     { icon: <Instagram className="w-5 h-5" />, url: "#", name: "Instagram" },
     { icon: <Twitter className="w-5 h-5" />, url: "#", name: "Twitter" }
   ];
 
   const contactInfo = [
-    { icon: <Phone className="w-5 h-5" />, text: "+(976) 9999-9999" },
-    { icon: <Mail className="w-5 h-5" />, text: "info@printsign.mn" },
-    { icon: <MapPin className="w-5 h-5" />, text: "Улаанбаатар хот, Сүхбаатар дүүрэг" }
+    { icon: <Phone className="w-5 h-5" />, text: "+(976) 8981-9988, 9102-0302" },
+    { icon: <Mail className="w-5 h-5" />, text: "bg_0830@yahoo.com" },
+    { icon: <MapPin className="w-5 h-5" />, text: "Өмнөговь, Даланзадгад, EGG towr 1 давхар" }
   ];
 
   const quickLinks = [
@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">PrintSign</h3>
+            <h3 className="text-xl font-bold text-white">Ноён Дизайн</h3>
             <p className="text-gray-400">
               Хэвлэл, хаяг, рекламын бүх төрлийн үйлчилгээг чанартай, шуурхай хүргэх мэргэжлийн баг.
             </p>
@@ -39,6 +39,8 @@ export default function Footer() {
                 <Link
                   key={index}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.name}
                   className="text-gray-400 hover:text-white transition-colors duration-300"
                 >
@@ -104,7 +106,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} PrintSign. Бүх эрх хуулиар хамгаалагдсан.
+            © {currentYear} NoyonDesign. Бүх эрх хуулиар хамгаалагдсан.
           </p>
         </div>
       </div>

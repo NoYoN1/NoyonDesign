@@ -48,13 +48,13 @@ export default function Home() {
     { 
       icon: <Printer className="w-6 h-6" />, 
       name: "Хэвлэл", 
-      description: "Өндөр чанарын хэвлэлийн бүтээгдэхүүн, бичиг хэрэг, ном, каталог",
+      description: "Өндөр чанарын хэвлэлийн бүтээгдэхүүн, фото, хулдаас, стикр, даавуу",
       color: "from-blue-500 to-cyan-500"
     },
     { 
       icon: <Palette className="w-6 h-6" />, 
       name: "Дизайн", 
-      description: "Брэнд таних тэмдэг, лого, хаягны дизайн, утасны хэрэглээний дизайн",
+      description: "Хаягны дизайн, 3D самбарын загвар, жаазан бүтээгдэхүүн",
       color: "from-purple-500 to-pink-500"
     },
     { 
