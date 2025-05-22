@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+const logoImageUrl = "/images/nd.png";
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -35,17 +36,29 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Link href="/" className="flex items-center">
-              <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-                НоёнДизайн
-              </span>
-            </Link>
-          </motion.div>
+          
+           <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* Link компонентийг стандарт <a> tag-аар сольсон */}
+      <a href="/" className="flex items-center">
+        {/* Image компонентийг стандарт <img> tag-аар сольсон */}
+        <img
+          src={logoImageUrl}
+          alt="НоёнДизайн Лого"
+          width={55} // Зургийн өргөн
+          height={55} // Зургийн өндөр
+          className="mr-2 rounded-full" // Текстээс зай авах, бөөрөнхий хэлбэртэй болгох
+        />
+
+        {/* Текст */}
+        <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+          НоёнДизайн
+        </span>
+      </a>
+    </motion.div>
 
           {/* Desktop Navigation */}
           <motion.nav
