@@ -55,7 +55,7 @@ const logoImageUrl = "/images/nd.png";
 
         {/* Текст */}
         <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-          НоёнДизайн
+          НОЁН ДИЗАЙН
         </span>
       </a>
     </motion.div>
