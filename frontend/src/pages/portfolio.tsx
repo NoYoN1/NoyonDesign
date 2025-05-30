@@ -39,8 +39,10 @@ export default function Portfolio() {
     alt: `Project ${i + 1}`
   }));
 
+  const shuffledImages = [...portfolioImages].sort(() => 0.5 - Math.random());
+
   const handleImageClick = (index: number) => {
-    setSelectedImage(portfolioImages[index].src);
+    setSelectedImage(shuffledImages[index].src);
     setCurrentIndex(index);
     setShowModal(true);
   };
@@ -51,15 +53,15 @@ export default function Portfolio() {
   };
 
   const showPrev = () => {
-    const newIndex = (currentIndex - 1 + portfolioImages.length) % portfolioImages.length;
+    const newIndex = (currentIndex - 1 + shuffledImages.length) % shuffledImages.length;
     setCurrentIndex(newIndex);
-    setSelectedImage(portfolioImages[newIndex].src);
+    setSelectedImage(shuffledImages[newIndex].src);
   };
 
   const showNext = () => {
-    const newIndex = (currentIndex + 1) % portfolioImages.length;
+    const newIndex = (currentIndex + 1) % shuffledImages.length;
     setCurrentIndex(newIndex);
-    setSelectedImage(portfolioImages[newIndex].src);
+    setSelectedImage(shuffledImages[newIndex].src);
   };
 
   const containerVariants = {
@@ -86,20 +88,19 @@ export default function Portfolio() {
       <div className="bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white min-h-screen">
         <section className="py-24 md:py-32 text-center">
           <div className="container mx-auto px-4 sm:px-6">
-         <div className="max-w-4xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl font-bold mb-4"
-          >
-            Бидний <span className="text-purple-400">хийсэн ажлууд</span>
-          </motion.h2>
-  <p className="text-lg text-gray-300"> Бидний бүтээлч сэтгэлгээ, ур чадварыг харуулсан шилдэг төслүүдтэй танилцана уу.</p>
-        </div>
-        </div>
-          
+            <div className="max-w-4xl mx-auto">
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <motion.h2
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-4xl sm:text-5xl font-bold mb-4"
+                >
+                  Бидний <span className="text-purple-400">хийсэн ажлууд</span>
+                </motion.h2>
+                <p className="text-lg text-gray-300">Бидний бүтээлч сэтгэлгээ, ур чадварыг харуулсан шилдэг төслүүдтэй танилцана уу.</p>
+              </div>
+            </div>
 
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -107,7 +108,7 @@ export default function Portfolio() {
               initial="hidden"
               animate="visible"
             >
-              {portfolioImages.map((image, index) => (
+              {shuffledImages.map((image, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
