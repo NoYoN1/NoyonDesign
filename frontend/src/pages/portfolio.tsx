@@ -1,6 +1,6 @@
 // pages/portfolio.tsx
 import Layout from "../components/Layout";
-import { useState } from "react";
+import { useState, } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -31,7 +31,6 @@ const Button = ({ children, variant, size, className, asChild, ...props }: any) 
 
 export default function Portfolio() {
   const [showModal, setShowModal] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const portfolioImages = Array.from({ length: 71 }, (_, i) => ({
@@ -42,26 +41,33 @@ export default function Portfolio() {
   const shuffledImages = [...portfolioImages].sort(() => 0.5 - Math.random());
 
   const handleImageClick = (index: number) => {
-    setSelectedImage(shuffledImages[index].src);
     setCurrentIndex(index);
     setShowModal(true);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setShowModal(false);
-    setSelectedImage("");
+    document.body.style.overflow = "";
   };
 
   const showPrev = () => {
     const newIndex = (currentIndex - 1 + shuffledImages.length) % shuffledImages.length;
     setCurrentIndex(newIndex);
-    setSelectedImage(shuffledImages[newIndex].src);
   };
 
   const showNext = () => {
     const newIndex = (currentIndex + 1) % shuffledImages.length;
     setCurrentIndex(newIndex);
-    setSelectedImage(shuffledImages[newIndex].src);
+  };
+
+  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      showPrev();
+    } else if (e.deltaY > 0) {
+      showNext();
+    }
   };
 
   const containerVariants = {
@@ -134,12 +140,13 @@ export default function Portfolio() {
         <AnimatePresence>
           {showModal && (
             <motion.div
-              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm overflow-hidden"
               initial="hidden"
               animate="visible"
               exit="exit"
               variants={modalVariants}
               onClick={closeModal}
+              onWheel={handleScroll}
             >
               <motion.div
                 className="relative max-w-4xl w-full rounded-lg shadow-2xl overflow-hidden"
@@ -149,7 +156,7 @@ export default function Portfolio() {
                 transition={{ delay: 0.1 }}
               >
                 <img
-                  src={selectedImage}
+                  src={shuffledImages[currentIndex].src}
                   alt="Preview"
                   className="w-full h-auto object-contain max-h-[80vh]"
                 />
