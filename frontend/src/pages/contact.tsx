@@ -1,6 +1,6 @@
 // pages/contact.tsx
 import Layout from "../components/Layout";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, } from "framer-motion";
 export default function Contact() {
   return (
     <Layout>

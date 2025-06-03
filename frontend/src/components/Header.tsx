@@ -3,7 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const cn = (...args: any[]) => args.filter(Boolean).join(" ");
